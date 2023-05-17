@@ -1,3 +1,5 @@
+package src;
+
 import processing.core.*;
 
 public class Main extends PApplet {
@@ -18,6 +20,6 @@ public class Main extends PApplet {
 
 	// main method to launch this Processing sketch from computer
 	public static void main(String[] args) {
-		PApplet.main(new String[] { "Main" });
+		PApplet.main(new String[] {"src.Main"});
 	}
 }

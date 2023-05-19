@@ -2,7 +2,6 @@ package src;
 
 import processing.core.PApplet;
 import processing.core.PImage;
-
 import java.util.ArrayList;
 
 public class Main extends PApplet {
@@ -19,16 +18,13 @@ public class Main extends PApplet {
 		ship = loadImage("../assets/alien_cropped.png");
 		turret = loadImage("../assets/turret_complete.png");
 //		bullet = loadImage("bullet.png");
-		for (int i = 0; i < 10; i++) {
-			shipList.add(new Ship(ship));
-		}
 	}
 
 	public void draw() {
 		background(0);
 
 		shipSpawnCounter += (int)(Math.random() * 10);
-		if (shipSpawnCounter > 100) {
+		if (shipSpawnCounter > 200) {
 			shipList.add(new Ship(ship));
 			shipSpawnCounter = 0;
 		}

@@ -7,6 +7,8 @@ public class Bullet {
         this.x = x;
         this.y = y;
         this.angle = angle;
+        //xSpeed is cos of angle, ySpeed is sin of angle
+        //ySpeed is negative because processing switches + and - for y compared to normal graphs
         this.xSpeed = (float)(Math.cos(angle) * 10);
         this.ySpeed = -(float)(Math.sin(angle) * 10);
         this.width = 10;

@@ -18,7 +18,7 @@ public class Main extends PApplet {
 		ship = loadImage("../assets/alien_cropped.png");
 		turret = loadImage("../assets/turret_complete.png");
 		turret.resize(100, 100);
-//		bullet = loadImage("bullet.png");
+		//bullet = loadImage("bullet.png");
 	}
 
 	public void draw() {
@@ -27,12 +27,14 @@ public class Main extends PApplet {
 		rect(0, height - 50, width, 50);
 		image(turret, width/2 - 50, height - 150);
 
+		//Randomly spawn ships
 		shipSpawnCounter += (int)(Math.random() * 10);
 		if (shipSpawnCounter > 200) {
 			shipList.add(new Ship(ship));
 			shipSpawnCounter = 0;
 		}
 
+		//Act and draw ships
 		for (int i = 0; i < shipList.size(); i++) {
 			shipList.get(i).act();
 			shipList.get(i).draw(this);
@@ -41,6 +43,7 @@ public class Main extends PApplet {
 			}
 		}
 
+		//Act and draw bullets
 		for (int i = 0; i < bulletList.size(); i++) {
 			bulletList.get(i).act();
 			bulletList.get(i).draw(this);
@@ -51,6 +54,7 @@ public class Main extends PApplet {
 	}
 
 	public boolean destroyOffscreenShips(int i) {
+		//If ship is offscreen, remove it from the list
 		if (shipList.get(i).isOffScreen(width, height)) {
 			shipList.remove(i);
 			return true;
@@ -59,6 +63,7 @@ public class Main extends PApplet {
 	}
 
 	public boolean destroyOffscreenBullets(int i) {
+		//If bullet is offscreen, remove it from the list
 		if (bulletList.get(i).isOffScreen(width, height)) {
 			bulletList.remove(i);
 			return true;

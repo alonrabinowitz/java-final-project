@@ -9,6 +9,8 @@ public class Ship {
         this.speed = (int)(Math.random() * 3) + 3;
         this.width = 97;
         this.height = 39;
+
+        //Randomly spawn on left or right side of screen
         if (Math.random() > .5) {
             this.x = -this.width;
         } else {
@@ -24,8 +26,8 @@ public class Ship {
     }
 
     public void draw(Main main) {
-//        main.fill(255);
-//        main.rect(this.x, this.y, this.width, this.height);
+        //main.fill(255);
+        //main.rect(this.x, this.y, this.width, this.height);
         main.image(this.image, this.x, this.y, this.width, this.height);
     }
     public boolean isOffScreen(int screenWidth, int screenHeight) {

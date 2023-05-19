@@ -7,8 +7,8 @@ public class Bullet {
         this.x = x;
         this.y = y;
         this.angle = angle;
-        this.xSpeed = (float)(Math.cos(angle) * 5);
-        this.ySpeed = -(float)(Math.sin(angle) * 5);
+        this.xSpeed = (float)(Math.cos(angle) * 10);
+        this.ySpeed = -(float)(Math.sin(angle) * 10);
         this.width = 10;
         this.height = 10;
     }

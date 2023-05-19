@@ -43,6 +43,7 @@ public class Main extends PApplet {
 			shipList.remove(i);
 			return true;
 		}
+		return false;
 	}
 
 

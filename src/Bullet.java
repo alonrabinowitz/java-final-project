@@ -3,16 +3,26 @@ package src;
 public class Bullet {
     int x, y, width, height;
     float angle, xSpeed, ySpeed;
-    public Bullet(float angle) {
-        x = (int)(Math.random() * 2) * 650 - 5;
-        y = (int)(Math.random() * 450);
+    public Bullet(int x, int y, float angle) {
+        this.x = x;
+        this.y = y;
         this.angle = angle;
-        xSpeed = (float)(Math.cos(angle) * 5);
-        ySpeed = (float)(Math.sin(angle) * 5);
-        width = 10;
-        height = 10;
+        this.xSpeed = (float)(Math.cos(angle) * 5);
+        this.ySpeed = -(float)(Math.sin(angle) * 5);
+        this.width = 10;
+        this.height = 10;
     }
     public boolean isOffScreen(int screenWidth, int screenHeight) {
         return this.x < -this.width || this.x > screenWidth || this.y < -this.height || this.y > screenHeight;
+    }
+
+    public void act() {
+        this.x += this.xSpeed;
+        this.y += this.ySpeed;
+    }
+
+    public void draw(Main main) {
+        main.fill(255);
+        main.ellipse(this.x, this.y, this.width, this.height);
     }
 }

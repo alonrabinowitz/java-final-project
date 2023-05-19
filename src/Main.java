@@ -32,13 +32,13 @@ public class Main extends PApplet {
 		for (int i = 0; i < shipList.size(); i++) {
 			shipList.get(i).act();
 			shipList.get(i).draw(this);
-			if(destroyOffscreenShips(i)){
+			if(destroyOffscreenShip(i)){
 				i--;
 			}
 		}
 	}
 
-	public boolean destroyOffscreenShips(int i){
+	public boolean destroyOffscreenShip(int i){
 		if (shipList.get(i).isOffScreen(width, height)) {
 			shipList.remove(i);
 			return true;

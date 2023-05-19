@@ -1,11 +1,14 @@
 package src;
 
+import processing.core.PImage;
+
 public class Ship {
     int x, y, speed, width, height;
-    public Ship() {
+    PImage image;
+    public Ship(PImage image) {
         this.speed = (int)(Math.random() * 3) + 3;
-        this.width = 75;
-        this.height = 30;
+        this.width = 97;
+        this.height = 39;
         if (Math.random() > .5) {
             this.x = -this.width;
         } else {
@@ -13,6 +16,7 @@ public class Ship {
             this.speed *= -1;
         }
         this.y = (int) (Math.random() * 450) + 50;
+        this.image = image;
     }
 
     public void act() {
@@ -20,8 +24,9 @@ public class Ship {
     }
 
     public void draw(Main main) {
-        main.fill(255);
-        main.rect(this.x, this.y, this.width, this.height);
+//        main.fill(255);
+//        main.rect(this.x, this.y, this.width, this.height);
+        main.image(this.image, this.x, this.y, this.width, this.height);
     }
     public boolean isOffScreen(int screenWidth, int screenHeight) {
         return this.x < -this.width || this.x > screenWidth || this.y < -this.height || this.y > screenHeight;

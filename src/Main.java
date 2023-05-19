@@ -1,16 +1,17 @@
 package src;
 
-import processing.core.*;
+import processing.core.PApplet;
+import java.util.ArrayList;
 
 public class Main extends PApplet {
-
+	ArrayList<Bullet> bulletList = new ArrayList<>();
+	ArrayList<Ship> shipList = new ArrayList<>();
 
 	public void settings() {
 		size(640, 550);
 	}
 
 	public void setup() {
-
 	}
 
 	public void draw() {

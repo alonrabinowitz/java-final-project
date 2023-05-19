@@ -18,7 +18,12 @@ public class Main extends PApplet {
 	}
 
 	public void draw() {
+		background(0);
 
+		for (Ship ship : shipList) {
+			ship.act();
+			ship.draw(this);
+		}
 	}
 
 

@@ -13,4 +13,9 @@ public class Ship {
     public void act() {
         x += speed;
     }
+
+    public void draw(Main main) {
+        main.fill(255);
+        main.rect(x, y, width, height);
+    }
 }

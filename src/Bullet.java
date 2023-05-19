@@ -1,16 +1,20 @@
 package src;
 
+import processing.core.PImage;
+
 public class Bullet {
     int x, y, width, height;
     float angle, xSpeed, ySpeed;
-    public Bullet(int x, int y, float angle) {
-        this.x = x;
+    PImage image;
+    public Bullet(int x, int y, float angle, PImage image) {
+        this.width = 10;
+        this.height = 24;
+        this.x = x - (this.width/2);
         this.y = y;
         this.angle = angle;
         this.xSpeed = (float)(Math.cos(angle) * 10);
         this.ySpeed = -(float)(Math.sin(angle) * 10);
-        this.width = 10;
-        this.height = 10;
+        this.image = image;
     }
 
     public void act() {
@@ -20,7 +24,9 @@ public class Bullet {
 
     public void draw(Main main) {
         main.fill(255);
-        main.ellipse(this.x, this.y, this.width, this.height);
+//        main.ellipse(this.x, this.y, this.width, this.height);
+
+        main.image(this.image, this.x, this.y, this.width, this.height);
     }
 
     public boolean isOffScreen(int screenWidth, int screenHeight) {

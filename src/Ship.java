@@ -3,15 +3,20 @@ package src;
 public class Ship {
     int x, y, speed, width, height;
     public Ship() {
-        x = (int)(Math.random() * 2) * 700 - ((int)(Math.random() * 50) + 50);
-        y = (int)(Math.random() * 450) + 50;
-        speed = (int)(Math.random() * 3) + 3;
-        width = 40;
-        height = 20;
+        this.speed = (int)(Math.random() * 3) + 3;
+        this.width = 40;
+        this.height = 20;
+        if (Math.random() > .5) {
+            this.x = -this.width;
+        } else {
+            this.x = 1280;
+            this.speed *= -1;
+        }
+        this.y = (int) (Math.random() * 450) + 50;
     }
 
     public void act() {
-        x += speed;
+        this.x += this.speed;
     }
 
     public void draw(Main main) {

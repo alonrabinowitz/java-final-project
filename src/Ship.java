@@ -4,8 +4,8 @@ public class Ship {
     int x, y, speed, width, height;
     public Ship() {
         this.speed = (int)(Math.random() * 3) + 3;
-        this.width = 40;
-        this.height = 20;
+        this.width = 75;
+        this.height = 30;
         if (Math.random() > .5) {
             this.x = -this.width;
         } else {

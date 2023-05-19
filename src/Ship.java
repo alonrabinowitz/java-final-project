@@ -16,6 +16,9 @@ public class Ship {
 
     public void draw(Main main) {
         main.fill(255);
-        main.rect(x, y, width, height);
+        main.rect(this.x, this.y, this.width, this.height);
+    }
+    public boolean isOffScreen(int screenWidth, int screenHeight) {
+        return this.x < -this.width || this.x > screenWidth || this.y < -this.height || this.y > screenHeight;
     }
 }

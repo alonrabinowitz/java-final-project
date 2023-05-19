@@ -18,7 +18,7 @@ public class Main extends PApplet {
 		ship = loadImage("../assets/alien_cropped.png");
 		turret = loadImage("../assets/turret_complete.png");
 		turret.resize(100, 100);
-		//bullet = loadImage("bullet.png");
+		bullet = loadImage("../assets/bullet.png");
 	}
 
 	public void draw() {
@@ -72,12 +72,12 @@ public class Main extends PApplet {
 	}
 
 	public void mouseReleased() {
-		bulletList.add(new Bullet(640, 570, (float)(Math.PI/2)));
+		bulletList.add(new Bullet(640, 570, (float)(Math.PI/2), bullet));
 	}
 
 	public void keyReleased() {
 		if (key == ' ') {
-			bulletList.add(new Bullet(640, 570, (float)(Math.PI/2)));
+			bulletList.add(new Bullet(640, 570, (float)(Math.PI/2), bullet));
 		}
 	}
 

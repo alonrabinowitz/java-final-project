@@ -8,7 +8,7 @@ public class Main extends PApplet {
 	ArrayList<Ship> shipList = new ArrayList<>();
 
 	public void settings() {
-		size(1920, 1080);
+		size(1280, 720);
 	}
 
 	public void setup() {

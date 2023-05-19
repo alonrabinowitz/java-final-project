@@ -12,6 +12,9 @@ public class Main extends PApplet {
 	}
 
 	public void setup() {
+		for (int i = 0; i < 10; i++) {
+			shipList.add(new Ship());
+		}
 	}
 
 	public void draw() {

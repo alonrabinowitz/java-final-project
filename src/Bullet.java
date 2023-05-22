@@ -7,8 +7,8 @@ public class Bullet {
     float angle, xSpeed, ySpeed;
     PImage image;
     public Bullet(int x, int y, float angle, PImage image) {
-        this.width = 10;
-        this.height = 24;
+        this.width = 13;
+        this.height = 31;
         this.x = x - (this.width/2);
         this.y = y;
         this.angle = angle;

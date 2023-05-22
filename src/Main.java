@@ -50,19 +50,23 @@ public class Main extends PApplet {
 		}
 
 		for(int i = 0; i < bulletsLeft; i++){
-			image(bullet, 10+20*i, 10, 10, 24);
+			image(bullet, 13+20*i, 13, 13, 31);
 		}
 	}
 
 	public void mouseReleased() {
-		bulletList.add(new Bullet(640, 570, (float)(Math.PI/2), bullet));
-		bulletsLeft--;
+		if(bulletsLeft > 0) {
+			bulletList.add(new Bullet(640, 570, (float) (Math.PI / 2), bullet));
+			bulletsLeft--;
+		}
 	}
 
 	public void keyReleased() {
 		if (key == ' ') {
-			bulletList.add(new Bullet(640, 570, (float)(Math.PI/2), bullet));
-			bulletsLeft--;
+			if(bulletsLeft > 0) {
+				bulletList.add(new Bullet(640, 570, (float) (Math.PI / 2), bullet));
+				bulletsLeft--;
+			}
 		}
 	}
 

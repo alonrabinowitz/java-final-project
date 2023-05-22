@@ -24,6 +24,7 @@ public class Main extends PApplet {
 	}
 
 	public void draw() {
+		frameRate(120);
 		background(0);
 		fill(255);
 		rect(0, height - 50, width, 50);
@@ -50,7 +51,7 @@ public class Main extends PApplet {
 		}
 
 		for(int i = 0; i < bulletsLeft; i++){
-			image(bullet, 13+20*i, 13, 13, 31);
+			image(bullet, 13+20*i, 13, 13, 13);
 		}
 	}
 

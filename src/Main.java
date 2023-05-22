@@ -50,7 +50,7 @@ public class Main extends PApplet {
 		}
 
 		for (int i = 0; i < bulletsLeft; i++){
-			image(bulletImg, 10+20*i, 10, 16, 16);
+			image(bulletImg, 10 + 20 * i, 10, 16, 16);
 		}
 	}
 

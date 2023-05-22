@@ -15,10 +15,10 @@ public class Main extends PApplet {
 	}
 
 	public void setup() {
-		ship = loadImage("../assets/alien_cropped.png");
-		turret = loadImage("../assets/turret_complete.png");
+		ship = loadImage("../assets/obj/alien_cropped.png");
+		turret = loadImage("../assets/obj/turret_complete.png");
 		turret.resize(100, 100);
-		bullet = loadImage("../assets/bullet.png");
+		bullet = loadImage("../assets/obj/bullet.png");
 		shipSpawnCounter = 0;
 		bulletsLeft = 10;
 	}

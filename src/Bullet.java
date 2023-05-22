@@ -19,13 +19,18 @@ public class Bullet {
         this.image = image;
     }
 
-    public void act(Main main) {
+    public boolean act(Main main) {
         this.x += this.xSpeed;
         this.y += this.ySpeed;
 
         main.fill(255);
         //main.ellipse(this.x, this.y, this.width, this.height);
         main.image(this.image, this.x, this.y, this.width, this.height);
+        if (this.isOffScreen(main.width, main.height)) {
+            main.bulletList.remove(this);
+            return true;
+        }
+        return false;
     }
 
     public boolean isOffScreen(int screenWidth, int screenHeight) {

@@ -38,37 +38,14 @@ public class Main extends PApplet {
 		for (int i = 0; i < shipList.size(); i++) {
 			Ship ship = shipList.get(i);
 			ship.act(this);
-			if (destroyOffscreenShips(ship)) {
-				i--;
-			}
+			if (ship.act(this)) i--;
 		}
 
 		//Act and draw bullets
 		for (int i = 0; i < bulletList.size(); i++) {
 			Bullet bullet = bulletList.get(i);
-			bullet.act(this);
-			if (destroyOffscreenBullets(bullet)) {
-				i--;
-			}
+			if (bullet.act(this)) i--;
 		}
-	}
-
-	public boolean destroyOffscreenShips(Ship ship) {
-		//If ship is offscreen, remove it from the list
-		if (ship.isOffScreen(width, height)) {
-			shipList.remove(ship);
-			return true;
-		}
-		return false;
-	}
-
-	public boolean destroyOffscreenBullets(Bullet bullet) {
-		//If bullet is offscreen, remove it from the list
-		if (bullet.isOffScreen(width, height)) {
-			bulletList.remove(bullet);
-			return true;
-		}
-		return false;
 	}
 
 	public void mouseReleased() {

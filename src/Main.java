@@ -17,10 +17,10 @@ public class Main extends PApplet {
 	public void setup() {
 		shipSpawnCounter = 0;
 		bulletsLeft = 10;
-		shipImg = loadImage("../assets/alien_cropped.png");
-		turretImg = loadImage("../assets/turret_complete.png");
+		shipImg = loadImage("../assets/obj/alien_cropped.png");
+		turretImg = loadImage("../assets/obj/turret_complete.png");
 		turretImg.resize(100, 100);
-		bulletImg = loadImage("../assets/bullet.png");
+		bulletImg = loadImage("../assets/obj/bullet.png");
 	}
 
 	public void draw() {
@@ -31,7 +31,7 @@ public class Main extends PApplet {
 
 		//Randomly spawn ships
 		shipSpawnCounter += (int)(Math.random() * 10);
-		if (shipSpawnCounter > 100) {
+		if (shipSpawnCounter > 90) {
 			shipList.add(new Ship(shipImg));
 			shipSpawnCounter = 0;
 		}
@@ -50,7 +50,7 @@ public class Main extends PApplet {
 		}
 
 		for(int i = 0; i < bulletsLeft; i++){
-			image(bulletImg, 10+20*i, 10, 10, 24);
+			image(bulletImg, 10+20*i, 10, 16, 16);
 		}
 	}
 

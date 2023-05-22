@@ -17,7 +17,7 @@ public class Ship {
             this.x = 1280;
             this.speed *= -1;
         }
-        this.y = (int) (Math.random() * 450) + 50;
+        this.y = (int)(Math.random() * 9) * 50 + 50;
         this.image = image;
     }
 

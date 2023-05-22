@@ -21,15 +21,14 @@ public class Ship {
         this.image = image;
     }
 
-    public void act() {
+    public void act(Main main) {
         this.x += this.speed;
-    }
 
-    public void draw(Main main) {
         //main.fill(255);
         //main.rect(this.x, this.y, this.width, this.height);
         main.image(this.image, this.x, this.y, this.width, this.height);
     }
+
     public boolean isOffScreen(int screenWidth, int screenHeight) {
         return this.x < -this.width || this.x > screenWidth || this.y < -this.height || this.y > screenHeight;
     }

@@ -19,15 +19,12 @@ public class Bullet {
         this.image = image;
     }
 
-    public void act() {
+    public void act(Main main) {
         this.x += this.xSpeed;
         this.y += this.ySpeed;
-    }
 
-    public void draw(Main main) {
         main.fill(255);
-//        main.ellipse(this.x, this.y, this.width, this.height);
-
+        //main.ellipse(this.x, this.y, this.width, this.height);
         main.image(this.image, this.x, this.y, this.width, this.height);
     }
 

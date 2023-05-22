@@ -36,36 +36,36 @@ public class Main extends PApplet {
 
 		//Act and draw ships
 		for (int i = 0; i < shipList.size(); i++) {
-			shipList.get(i).act();
-			shipList.get(i).draw(this);
-			if (destroyOffscreenShips(i)) {
+			Ship ship = shipList.get(i);
+			ship.act(this);
+			if (destroyOffscreenShips(ship)) {
 				i--;
 			}
 		}
 
 		//Act and draw bullets
 		for (int i = 0; i < bulletList.size(); i++) {
-			bulletList.get(i).act();
-			bulletList.get(i).draw(this);
-			if (destroyOffscreenBullets(i)) {
+			Bullet bullet = bulletList.get(i);
+			bullet.act(this);
+			if (destroyOffscreenBullets(bullet)) {
 				i--;
 			}
 		}
 	}
 
-	public boolean destroyOffscreenShips(int i) {
+	public boolean destroyOffscreenShips(Ship ship) {
 		//If ship is offscreen, remove it from the list
-		if (shipList.get(i).isOffScreen(width, height)) {
-			shipList.remove(i);
+		if (ship.isOffScreen(width, height)) {
+			shipList.remove(ship);
 			return true;
 		}
 		return false;
 	}
 
-	public boolean destroyOffscreenBullets(int i) {
+	public boolean destroyOffscreenBullets(Bullet bullet) {
 		//If bullet is offscreen, remove it from the list
-		if (bulletList.get(i).isOffScreen(width, height)) {
-			bulletList.remove(i);
+		if (bullet.isOffScreen(width, height)) {
+			bulletList.remove(bullet);
 			return true;
 		}
 		return false;

@@ -2,15 +2,13 @@ package src;
 
 import processing.core.PImage;
 
-import static java.lang.Math.PI;
-
 public class Bullet {
     int x, y, width, height, bulletNum;
     float angle, xSpeed, ySpeed;
     PImage image;
     public Bullet(int x, int y, int bulletNum, float angle, PImage image) {
-        this.width = 16;
-        this.height = 16;
+        this.width = 24;
+        this.height = 24;
         this.x = x - (this.width/2);
         this.y = y;
         this.bulletNum = bulletNum;

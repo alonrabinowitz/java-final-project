@@ -7,16 +7,16 @@ public class Bullet {
     float angle, xSpeed, ySpeed;
     PImage image;
     public Bullet(int x, int y, int bulletNum, float angle, PImage image) {
-        this.width = 10;
-        this.height = 24;
+        this.width = 16;
+        this.height = 16;
         this.x = x - (this.width/2);
         this.y = y;
         this.bulletNum = bulletNum;
         this.angle = angle;
         //xSpeed is cos of angle, ySpeed is sin of angle
         //ySpeed is negative because processing switches + and - for y compared to normal graphs
-        this.xSpeed = (float)(Math.cos(angle) * 10);
-        this.ySpeed = -(float)(Math.sin(angle) * 10);
+        this.xSpeed = (float)(Math.cos(angle) * 15);
+        this.ySpeed = -(float)(Math.sin(angle) * 15);
         this.image = image;
     }
 
@@ -37,6 +37,7 @@ public class Bullet {
             Ship ship = main.shipList.get(i);
             if (this.isColliding(ship)) {
                 main.shipList.remove(i);
+                main.shipSpawnCounter += 10;
                 this.duplicate(main);
                 return true;
             }

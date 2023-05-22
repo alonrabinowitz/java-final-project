@@ -61,8 +61,10 @@ public class Main extends PApplet {
 
 	public void keyReleased() {
 		if (key == ' ') {
-			bulletList.add(new Bullet(640, 570, 1, (float)(Math.PI/2), bulletImg));
-			bulletsLeft--;
+			if(bulletsLeft > 0) {
+				bulletList.add(new Bullet(640, 570, 1, (float)(Math.PI/2), bulletImg));
+				bulletsLeft--;
+			}
 		}
 	}
 

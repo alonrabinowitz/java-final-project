@@ -7,32 +7,32 @@ import java.util.ArrayList;
 public class Main extends PApplet {
 	ArrayList<Bullet> bulletList = new ArrayList<>();
 	ArrayList<Ship> shipList = new ArrayList<>();
-	PImage ship, turret, bullet, background;
 	int shipSpawnCounter, bulletsLeft;
+	PImage shipImg, turretImg, bulletImg, background;
 
 	public void settings() {
 		size(1280, 720);
 	}
 
 	public void setup() {
-		ship = loadImage("../assets/alien_cropped.png");
-		turret = loadImage("../assets/turret_complete.png");
-		turret.resize(100, 100);
-		bullet = loadImage("../assets/bullet.png");
 		shipSpawnCounter = 0;
 		bulletsLeft = 10;
+		shipImg = loadImage("../assets/alien_cropped.png");
+		turretImg = loadImage("../assets/turret_complete.png");
+		turretImg.resize(100, 100);
+		bulletImg = loadImage("../assets/bullet.png");
 	}
 
 	public void draw() {
 		background(0);
 		fill(255);
 		rect(0, height - 50, width, 50);
-		image(turret, width/2 - 50, height - 150);
+		image(turretImg, width/2 - 50, height - 150);
 
 		//Randomly spawn ships
 		shipSpawnCounter += (int)(Math.random() * 10);
-		if (shipSpawnCounter > 200) {
-			shipList.add(new Ship(ship));
+		if (shipSpawnCounter > 100) {
+			shipList.add(new Ship(shipImg));
 			shipSpawnCounter = 0;
 		}
 
@@ -50,22 +50,21 @@ public class Main extends PApplet {
 		}
 
 		for(int i = 0; i < bulletsLeft; i++){
-			image(bullet, 10+20*i, 10, 10, 24);
+			image(bulletImg, 10+20*i, 10, 10, 24);
 		}
 	}
 
 	public void mouseReleased() {
-		bulletList.add(new Bullet(640, 570, (float)(Math.PI/2), bullet));
 		bulletsLeft--;
+		bulletList.add(new Bullet(640, 570, 1, (float)(Math.PI/2), bulletImg));
 	}
 
 	public void keyReleased() {
 		if (key == ' ') {
-			bulletList.add(new Bullet(640, 570, (float)(Math.PI/2), bullet));
+			bulletList.add(new Bullet(640, 570, 1, (float)(Math.PI/2), bulletImg));
 			bulletsLeft--;
 		}
 	}
-
 
 	// main method to launch this Processing sketch from computer
 	public static void main(String[] args) {

@@ -57,7 +57,7 @@ public class Main extends PApplet {
 	public void mouseReleased() {
 		if (bulletsLeft > 0) {
 			bulletsLeft--;
-			bulletList.add(new Bullet(640, 570, 1, (float) (Math.PI / 2), bulletImg));
+			bulletList.add(new Bullet(640, 570, 1, (float)(Math.PI / 2), bulletImg));
 		}
 	}
 

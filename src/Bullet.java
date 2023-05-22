@@ -2,13 +2,15 @@ package src;
 
 import processing.core.PImage;
 
+import static java.lang.Math.PI;
+
 public class Bullet {
     int x, y, width, height;
     float angle, xSpeed, ySpeed;
     PImage image;
     public Bullet(int x, int y, float angle, PImage image) {
-        this.width = 13;
-        this.height = 31;
+        this.width = 17;
+        this.height = 17;
         this.x = x - (this.width/2);
         this.y = y;
         this.angle = angle;
@@ -22,7 +24,6 @@ public class Bullet {
     public boolean act(Main main) {
         this.x += this.xSpeed;
         this.y += this.ySpeed;
-
         main.image(this.image, this.x, this.y, this.width, this.height);
         if (this.isOffScreen(main.width, main.height)) {
             main.bulletList.remove(this);

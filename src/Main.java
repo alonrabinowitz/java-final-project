@@ -55,8 +55,10 @@ public class Main extends PApplet {
 	}
 
 	public void mouseReleased() {
-		bulletsLeft--;
-		bulletList.add(new Bullet(640, 570, 1, (float)(Math.PI/2), bulletImg));
+		if (bulletsLeft > 0) {
+			bulletsLeft--;
+			bulletList.add(new Bullet(640, 570, 1, (float) (Math.PI / 2), bulletImg));
+		}
 	}
 
 	public void keyReleased() {

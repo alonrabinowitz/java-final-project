@@ -13,7 +13,8 @@ public class Main extends PApplet {
 	ArrayList<Bullet> bulletList = new ArrayList<>();
 	ArrayList<Ship> shipList = new ArrayList<>();
 	int shipSpawnCounter, bulletsLeft, score, highScore;
-	PImage shipImg, turretImg, bulletImg, background;
+	PImage shipImg, turretImg, bulletImg;
+	BG background;
 	Scanner reader;
 
 	public void settings() {
@@ -27,6 +28,7 @@ public class Main extends PApplet {
 		turretImg = loadImage("../assets/obj/turret_complete.png");
 		turretImg.resize(100, 100);
 		bulletImg = loadImage("../assets/obj/bullet.png");
+		background = new BG(loadImage("../assets/BG/bldg_fg.png"), loadImage("../assets/BG/bldg_mg1.png"), loadImage("../assets/BG/bldg_mg2.png"), loadImage("../assets/BG/city.png"), loadImage("../assets/BG/hills.png"), loadImage("../assets/BG/farm.png"));
 		score = 0;
 		try {
 //			Declaration is here because I need a different object in order to write to the file, and making it a local object will delete it when setup() finishes running
@@ -52,7 +54,10 @@ public class Main extends PApplet {
 
 	public void draw() {
 		background(200,130,0);
+		fill(255);
+		rect(0, height - 50, width, 50);
 		image(turretImg, width/2 - 50, height - 150);
+		background.draw(this);
 
 		//Randomly spawn ships
 		shipSpawnCounter += (int)(Math.random() * 10);

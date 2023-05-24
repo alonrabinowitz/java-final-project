@@ -7,8 +7,8 @@ public class Bullet {
     float angle, xSpeed, ySpeed;
     PImage image;
     public Bullet(int x, int y, int bulletNum, float angle, PImage image) {
-        this.width = 16;
-        this.height = 16;
+        this.width = 24;
+        this.height = 24;
         this.x = x - (this.width/2);
         this.y = y;
         this.bulletNum = bulletNum;
@@ -23,7 +23,6 @@ public class Bullet {
     public boolean act(Main main) {
         this.x += this.xSpeed;
         this.y += this.ySpeed;
-
         main.image(this.image, this.x, this.y, this.width, this.height);
         if (this.isOffScreen(main.width, main.height) || this.collisions(main)) {
             main.bulletList.remove(this);

@@ -31,7 +31,7 @@ public class Main extends PApplet {
 
 		//Randomly spawn ships
 		shipSpawnCounter += (int)(Math.random() * 10);
-		if (shipSpawnCounter > 90) {
+		if (shipSpawnCounter > 80) {
 			shipList.add(new Ship(shipImg));
 			shipSpawnCounter = 0;
 		}
@@ -49,19 +49,21 @@ public class Main extends PApplet {
 			if (bullet.act(this)) i--;
 		}
 
-		for(int i = 0; i < bulletsLeft; i++){
-			image(bulletImg, 10+20*i, 10, 16, 16);
+		for (int i = 0; i < bulletsLeft; i++){
+			image(bulletImg, 10 + 20 * i, 10, 16, 16);
 		}
 	}
 
 	public void mouseReleased() {
-		bulletsLeft--;
-		bulletList.add(new Bullet(640, 570, 1, (float)(Math.PI/2), bulletImg));
+		if (bulletsLeft > 0) {
+			bulletsLeft--;
+			bulletList.add(new Bullet(640, 570, 1, (float)(Math.PI / 2), bulletImg));
+		}
 	}
 
 	public void keyReleased() {
 		if (key == ' ') {
-			if(bulletsLeft > 0) {
+			if (bulletsLeft > 0) {
 				bulletList.add(new Bullet(640, 570, 1, (float)(Math.PI/2), bulletImg));
 				bulletsLeft--;
 			}

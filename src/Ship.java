@@ -6,7 +6,7 @@ public class Ship {
     int x, y, speed, width, height;
     PImage image;
     public Ship(PImage image) {
-        this.speed = (int)(Math.random() * 3) + 3;
+        this.speed = (int)(Math.random() * 2) + 3;
         this.width = 97;
         this.height = 39;
 

@@ -46,8 +46,11 @@ public class Bullet {
     }
 
     public void duplicate(Main main) {
+        int newBulletNum;
+        if (this.bulletNum == 20) newBulletNum = 20; else newBulletNum = this.bulletNum + 1;
+        System.out.println(newBulletNum);
         for (int i = 0; i < this.bulletNum + 1; i++) {
-            main.bulletList.add(new Bullet(this.x, this.y, this.bulletNum + 1, (float)(i * 2 * Math.PI / (this.bulletNum + 1)), main.bulletImg));
+            main.bulletList.add(new Bullet(this.x, this.y, newBulletNum, (float)(i * 2 * Math.PI / (this.bulletNum + 1)), main.bulletImg));
         }
     }
 

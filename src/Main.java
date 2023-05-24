@@ -31,7 +31,7 @@ public class Main extends PApplet {
 
 		//Randomly spawn ships
 		shipSpawnCounter += (int)(Math.random() * 10);
-		if (shipSpawnCounter > 80) {
+		if (shipSpawnCounter > 50) {
 			shipList.add(new Ship(shipImg));
 			shipSpawnCounter = 0;
 		}

@@ -25,8 +25,6 @@ public class Main extends PApplet {
 
 	public void draw() {
 		background(200,130,0);
-		fill(255);
-		rect(0, height - 50, width, 50);
 		image(turretImg, width/2 - 50, height - 150);
 
 		//Randomly spawn ships
@@ -51,6 +49,9 @@ public class Main extends PApplet {
 		for (int i = 0; i < bulletsLeft; i++){
 			image(bulletImg, 10 + 30 * i, 10, 20, 20);
 		}
+		
+		fill(255);
+		rect(0, height - 50, width, 50);
 	}
 
 	public void mouseReleased() {

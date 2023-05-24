@@ -24,7 +24,7 @@ public class Main extends PApplet {
 	}
 
 	public void draw() {
-		background(0);
+		background(200,130,0);
 		fill(255);
 		rect(0, height - 50, width, 50);
 		image(turretImg, width/2 - 50, height - 150);
@@ -42,7 +42,6 @@ public class Main extends PApplet {
 			ship.act(this);
 			if (ship.act(this)) i--;
 		}
-
 		//Act and draw bullets
 		for (int i = 0; i < bulletList.size(); i++) {
 			Bullet bullet = bulletList.get(i);
@@ -59,6 +58,7 @@ public class Main extends PApplet {
 			bulletsLeft--;
 			bulletList.add(new Bullet(640, 570, 1, (float)(Math.PI / 2), bulletImg));
 		}
+
 	}
 
 	public void keyReleased() {

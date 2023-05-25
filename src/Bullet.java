@@ -36,7 +36,7 @@ public class Bullet {
             Ship ship = main.shipList.get(i);
             if (this.isColliding(ship)) {
                 main.shipList.remove(i);
-                main.score++;
+                main.score.score++;
                 main.shipSpawnCounter += 10;
                 this.duplicate(main);
                 return true;

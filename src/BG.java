@@ -8,11 +8,11 @@ import java.util.ArrayList;
 public class BG {
     ArrayList <Image> bgElements = new ArrayList<>();
    public BG(PImage fg1, PImage mg1, PImage mg2, PImage bg1, PImage bg2, PImage bg3){
-       bgElements.add(new Image(bg1, 0, 100));
+       bgElements.add(new Image(bg1, (int)(Math.random()*700), 100));
        bgElements.add(new Image(bg2, 0, 100));
-       bgElements.add(new Image(mg2, 234, 520));
-       bgElements.add(new Image(mg1, 522, 450));
-       bgElements.add(new Image(fg1, 800, 250));
+       bgElements.add(new Image(mg2, (int)(Math.random()*700), 520));
+       bgElements.add(new Image(mg1, (int)(Math.random()*700), 450));
+       bgElements.add(new Image(fg1, (int)(Math.random()*700), 250));
        bgElements.add(new Image(bg3, -5, 150));
 
 

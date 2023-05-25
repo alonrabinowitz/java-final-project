@@ -14,8 +14,8 @@ public class Main extends PApplet {
 	ArrayList<Ship> shipList = new ArrayList<>();
 	int shipSpawnCounter, bulletsLeft, score, highScore;
 	PImage shipImg, turretImg, bulletImg;
-	BG background;
 	Scanner reader;
+	BG background;
 
 	public void settings() {
 		size(1280, 720);

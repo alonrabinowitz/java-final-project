@@ -56,8 +56,8 @@ public class Main extends PApplet {
 		background(200,130,0);
 		fill(255);
 		rect(0, height - 50, width, 50);
-		image(turretImg, width/2 - 50, height - 150);
 		background.draw(this);
+		image(turretImg, width/2 - 50, height - 150);
 
 		//Randomly spawn ships
 		shipSpawnCounter += (int)(Math.random() * 10);

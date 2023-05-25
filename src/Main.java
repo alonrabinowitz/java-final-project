@@ -85,7 +85,7 @@ public class Main extends PApplet {
 
 		if (score > highScore){
 			try {
-//				Declaring a new object because we need to close it in order to save to the file
+				//Declaring a new object because we need to close it in order to save to the file
 				FileWriter fileWriter = new FileWriter("highscore.txt");
 				fileWriter.write(Integer.toString(highScore));
 				fileWriter.close();

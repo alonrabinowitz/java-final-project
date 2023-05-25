@@ -2,11 +2,7 @@ package src;
 
 import processing.core.PApplet;
 import processing.core.PImage;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main extends PApplet {
 	ArrayList<Bullet> bulletList = new ArrayList<>();

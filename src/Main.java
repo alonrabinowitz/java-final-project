@@ -39,7 +39,7 @@ public class Main extends PApplet {
 				text("Click to start", (float)width/2, (float)height/2);
 				break;
 			case 1:
-				background(200,130,0);
+				background(225,155,25);
 				background.draw(this);
 				tint(234, 190,144);
 				image(turretImg, width / 2 - 50, height - 150);

@@ -37,8 +37,6 @@ public class Score {
         main.textSize(26);
         main.text("Score: " + score, 1100, 40);
         main.text("High Score: " + highScore, 550, 40);
-
-        //this.writeScore();
     }
 
     public void reset() {
@@ -57,21 +55,4 @@ public class Score {
         }
         this.score = 0;
     }
-
-    /*public void writeScore() {
-        if (score > highScore) {
-            try {
-                //Declaring a new object because we need to close it in order to save to the file
-                FileWriter fileWriter = new FileWriter("highscore.txt");
-                fileWriter.write(Integer.toString(highScore));
-                fileWriter.close();
-                System.out.println("New high score of " + score + " was written to file because it is larger than the previous high score of " + highScore);
-                highScore = score;
-            } catch (IOException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-            }
-        }
-    }
-    */
 }

@@ -14,7 +14,7 @@ public class Bullet {
         this.bulletNum = bulletNum;
         this.angle = angle;
         //xSpeed is cos of angle, ySpeed is sin of angle
-        //ySpeed is negative because processing switches + and - for y compared to normal graphs
+        //ySpeed is negative because Processing switches + and - for y compared to normal graphs
         this.xSpeed = (float)(Math.cos(angle) * 15);
         this.ySpeed = -(float)(Math.sin(angle) * 15);
         this.image = image;

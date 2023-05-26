@@ -25,7 +25,7 @@ public class Main extends PApplet {
 		turretImg = loadImage("../assets/obj/turret_complete.png");
 		turretImg.resize(100, 100);
 		bulletImg = loadImage("../assets/obj/bullet.png");
-		background = new BG(loadImage("../assets/BG/bldg_fg.png"), loadImage("../assets/BG/bldg_mg1.png"), loadImage("../assets/BG/bldg_mg2.png"), loadImage("../assets/BG/city.png"), loadImage("../assets/BG/hills.png"), loadImage("../assets/BG/farm.png"));
+		background = new BG(loadImage("../assets/BG/bldg_fg.png"), loadImage("../assets/BG/bldg_mg1.png"), loadImage("../assets/BG/city.png"), loadImage("../assets/BG/hills.png"), loadImage("../assets/BG/farm.png"));
 		score = new Score();
 	}
 
@@ -39,10 +39,9 @@ public class Main extends PApplet {
 				text("Click to start", (float)width/2, (float)height/2);
 				break;
 			case 1:
-				background(200, 130, 0);
-				fill(255);
-				rect(0, height - 50, width, 50);
+				background(200,130,0);
 				background.draw(this);
+				tint(234, 190,144);
 				image(turretImg, width / 2 - 50, height - 150);
 
 				//Randomly spawn ships

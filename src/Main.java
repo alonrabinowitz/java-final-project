@@ -8,7 +8,7 @@ public class Main extends PApplet {
 	ArrayList<Bullet> bulletList = new ArrayList<>();
 	ArrayList<Ship> shipList = new ArrayList<>();
 	int shipSpawnCounter, bulletsLeft;
-	PImage shipImg, turretImg, bulletImg;
+	PImage shipImg, turretImg, bulletImg, turretBaseImg, turretCanonImg;
 	BG background;
 	Score score;
 
@@ -22,6 +22,8 @@ public class Main extends PApplet {
 		shipImg = loadImage("../assets/obj/alien_cropped.png");
 		turretImg = loadImage("../assets/obj/turret_complete.png");
 		turretImg.resize(100, 100);
+		turretBaseImg = loadImage("../assets/obj/turret_base.png");
+		turretCanonImg = loadImage("../assets/obj/turret_cannon.png");
 		bulletImg = loadImage("../assets/obj/bullet.png");
 		background = new BG(loadImage("../assets/BG/bldg_fg.png"), loadImage("../assets/BG/bldg_mg1.png"), loadImage("../assets/BG/bldg_mg2.png"), loadImage("../assets/BG/city.png"), loadImage("../assets/BG/hills.png"), loadImage("../assets/BG/farm.png"));
 		score = new Score();
@@ -32,7 +34,10 @@ public class Main extends PApplet {
 		fill(255);
 		rect(0, height - 50, width, 50);
 		background.draw(this);
+//		image(turretBaseImg, width/2 - 50, height - 150, 100, 100);
 		image(turretImg, width/2 - 50, height - 150);
+//		drawTurret(width/2 - 50, height - 150);
+//		drawTurret(500, 300);
 
 		//Randomly spawn ships
 		shipSpawnCounter += (int)(Math.random() * 10);
@@ -74,6 +79,31 @@ public class Main extends PApplet {
 				bulletsLeft--;
 			}
 		}
+	}
+
+	public void drawTurret(int x, int y) {
+		if(mouseX > x){
+			translate(x+50, y+100);
+//			rotate((float) Math.PI/2 + (float)(Math.atan((float)(mouseY - y+50)/(mouseX - x+50))));
+			rotate((float) ((2 * Math.PI) - Math.atan((double) (mouseX - (x + 50)) / ((y+100)-mouseY))));
+			image(turretCanonImg, -50, -100, 100, 100);
+//			rotate(-((float) Math.PI/2 + (float)(Math.atan((float)(mouseY - y+50)/(mouseX - x+50)))));
+			rotate((float) -((2 * Math.PI) - Math.atan((double) (mouseX - (x + 50)) / ((y+100)-mouseY))));
+			translate(-x-50, -y-100);
+		}
+//		else if (mouseX < x) {
+//			translate(x+50, y+100);
+//			rotate((float) Math.PI/2 + (float)(Math.atan((float)(mouseY - y+50)/(mouseX - x+50))));
+//			image(turretCanonImg, -50, -100, 100, 100);
+//			rotate(-((float) Math.PI/2 + (float)(Math.atan((float)(mouseY - y+50)/(mouseX - x+50)))));
+//			translate(-x-50, -y-100);
+//		} else {
+//			translate(x+50, y+100);
+//			rotate((float) Math.PI/2);
+//			image(turretCanonImg, -50, -100, 100, 100);
+//			rotate(-((float) Math.PI/2));
+//			translate(-x-50, -y-100);
+//		}
 	}
 
 	// main method to launch this Processing sketch from computer

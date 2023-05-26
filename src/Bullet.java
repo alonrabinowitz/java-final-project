@@ -51,7 +51,7 @@ public class Bullet {
         if (this.bulletNum == 10) newBulletNum = 10; else newBulletNum = this.bulletNum + 1;
         System.out.println(newBulletNum);
         for (int i = 0; i < this.bulletNum + 1; i++) {
-            main.bulletList.add(new Bullet(this.x, this.y, newBulletNum, (float)(i * 2 * Math.PI / (this.bulletNum + 1)), main.bulletImg));
+            main.bulletList.add(new Bullet(this.x, this.y, newBulletNum, (float)(i * 2 * Math.PI / (newBulletNum)), main.bulletImg));
         }
     }
 

@@ -23,7 +23,7 @@ public class BG {
 class Image {
     PImage img;
     int x, y;
-    public Image(PImage img, int x, int y){
+    public Image(PImage img, int x, int y) {
         this.img = img;
         this.x = x;
         this.y = y;

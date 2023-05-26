@@ -86,6 +86,16 @@ public class Main extends PApplet {
 	}
 
 	public void mouseReleased() {
+		clickAction();
+	}
+
+	public void keyReleased() {
+		if (key == ' ') {
+			clickAction();
+		}
+	}
+
+	private void clickAction() {
 		switch (gameState) {
 			case 0:
 				gameState = 1;
@@ -103,29 +113,6 @@ public class Main extends PApplet {
 				bulletsLeft = 10;
 				score.reset();
 				break;
-		}
-	}
-
-	public void keyReleased() {
-		if (key == ' ') {
-			switch (gameState) {
-				case 0:
-					gameState = 1;
-					break;
-				case 1:
-					if (bulletsLeft > 0) {
-						bulletsLeft--;
-						bulletList.add(new Bullet(640, 570, 1, (float)(Math.PI / 2), bulletImg));
-					}
-					break;
-				case 2:
-					gameState = 1;
-					shipList.clear();
-					bulletList.clear();
-					bulletsLeft = 10;
-					score.reset();
-					break;
-			}
 		}
 	}
 

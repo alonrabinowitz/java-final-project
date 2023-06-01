@@ -6,7 +6,8 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Score {
-    int score, highScore;
+    public int score;
+    public static int highScore;
     Scanner reader;
     public Score() {
         try {
@@ -32,11 +33,12 @@ public class Score {
     }
 
     public void draw(Main main) {
-        main.fill(255);
+        main.fill(0);
         main.rect(0, main.height - 50, main.width, 50);
         main.textSize(26);
-        main.text("Score: " + score, 1100, 40);
-        main.text("High Score: " + highScore, 550, 40);
+        main.fill(255);
+        main.text("Score: " + score, 1100, 35);
+        main.text("High Score: " + highScore, 625, 35);
     }
 
     public void reset() {

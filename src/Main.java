@@ -1,10 +1,7 @@
 package src;
 
 import processing.core.PApplet;
-import processing.core.PFont;
 import processing.core.PImage;
-
-import java.awt.*;
 import java.util.ArrayList;
 
 public class Main extends PApplet {
@@ -15,7 +12,6 @@ public class Main extends PApplet {
 	PImage shipImg, turretImg, bulletImg;
 	BG background;
 	Score score;
-	PFont JetBrainsMono;
 
 	public void settings() {
 		size(1280, 720);
@@ -31,7 +27,6 @@ public class Main extends PApplet {
 		bulletImg = loadImage("../assets/obj/bullet.png");
 		background = new BG(loadImage("../assets/BG/bldg_fg.png"), loadImage("../assets/BG/bldg_mg1.png"), loadImage("../assets/BG/city.png"), loadImage("../assets/BG/hills.png"), loadImage("../assets/BG/farm.png"));
 		score = new Score();
-		JetBrainsMono = createFont("../assets/fonts/JetBrainsMono-Regular.ttf", 32);
 	}
 
 	public void draw() {

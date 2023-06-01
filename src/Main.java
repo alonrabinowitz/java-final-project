@@ -16,7 +16,6 @@ public class Main extends PApplet {
 	Score score;
 	PFont JetBrainsMono;
 	BG background;
-	boolean bg;
 
 	public void settings() {
 		size(1280, 720);
@@ -33,7 +32,6 @@ public class Main extends PApplet {
 		score = new Score();
 		preview1 = loadImage("../assets/BG/preview1.png");
 		preview2 = loadImage("../assets/BG/preview2.png");
-		bg = false;
 		JetBrainsMono = createFont("../assets/fonts/JetBrainsMono-Regular.ttf", 32);
 	}
 

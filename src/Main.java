@@ -15,7 +15,7 @@ public class Main extends PApplet {
 	PImage shipImg, turretImg, bulletImg, preview1, preview2;
 	Score score;
 	PFont JetBrainsMono;
-	BG background, background1;
+	BG background;
 	boolean bg;
 
 	public void settings() {
@@ -33,7 +33,6 @@ public class Main extends PApplet {
 		score = new Score();
 		preview1 = loadImage("../assets/BG/preview1.png");
 		preview2 = loadImage("../assets/BG/preview2.png");
-		background1 = new BG(loadImage("../assets/BG/city.png"));
 		bg = false;
 		JetBrainsMono = createFont("../assets/fonts/JetBrainsMono-Regular.ttf", 32);
 	}
@@ -57,13 +56,7 @@ public class Main extends PApplet {
 				image(preview2, 750, 400);
 				break;
 			case 1:
-				if(bg = false) {
-					background(10,13,17);
-					background.draw(this);
-				}else if(bg = true){
-					background(0,23,45);
-					background1.draw(this);
-				}
+				background.draw(this);
 				fill(0,150);
 				rect(0,0, 1280, 50);
 				image(turretImg, width / 2 - 50, height - 150);
@@ -121,18 +114,14 @@ public class Main extends PApplet {
 		switch (gameState) {
 			case 0:
 				gameState = 1;
-				if(mouseX>=200 && mouseX <= 520 && mouseY >= 400 && mouseY <= 580){
+				if (mouseX >= 200 && mouseX <= 520 && mouseY >= 400 && mouseY <= 580) {
 					fill(43,43,43);
 					rect(190, 390, 340, 200);
 					background = new BG(loadImage("../assets/BG/city.png"));
-					background.draw(this);
-					bg = false;
-				}
-				else if(mouseX>=750 && mouseX<=1070 && mouseY >= 400 && mouseY <= 580){
+				} else if (mouseX >= 750 && mouseX <= 1070 && mouseY >= 400 && mouseY <= 580){
 					fill(43,43,43);
 					rect(740, 390, 340, 200);
-					background1.draw(this);
-					bg = true;
+					background = new BG(loadImage("../assets/BG/farm.png"));
 				}
 				break;
 			case 1:

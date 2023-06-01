@@ -1,7 +1,10 @@
 package src;
 
 import processing.core.PApplet;
+import processing.core.PFont;
 import processing.core.PImage;
+
+import java.awt.*;
 import java.util.ArrayList;
 
 public class Main extends PApplet {
@@ -9,9 +12,11 @@ public class Main extends PApplet {
 	ArrayList<Ship> shipList = new ArrayList<>();
 	int gameState;
 	int shipSpawnCounter, bulletsLeft;
-	PImage shipImg, turretImg, bulletImg;
-	BG background;
+	PImage shipImg, turretImg, bulletImg, preview1, preview2;
 	Score score;
+	PFont JetBrainsMono;
+	BG background, background1;
+	boolean bg;
 
 	public void settings() {
 		size(1280, 720);
@@ -25,8 +30,12 @@ public class Main extends PApplet {
 		turretImg = loadImage("../assets/obj/turret_complete.png");
 		turretImg.resize(100, 100);
 		bulletImg = loadImage("../assets/obj/bullet.png");
-		background = new BG(loadImage("../assets/BG/bldg_fg.png"), loadImage("../assets/BG/bldg_mg1.png"), loadImage("../assets/BG/city.png"), loadImage("../assets/BG/hills.png"), loadImage("../assets/BG/farm.png"));
 		score = new Score();
+		preview1 = loadImage("../assets/BG/preview1.png");
+		preview2 = loadImage("../assets/BG/preview2.png");
+		background1 = new BG(loadImage("../assets/BG/city.png"));
+		bg = false;
+		JetBrainsMono = createFont("../assets/fonts/JetBrainsMono-Regular.ttf", 32);
 	}
 
 	public void draw() {
@@ -36,14 +45,28 @@ public class Main extends PApplet {
 				fill(255);
 				textSize(50);
 				textAlign(CENTER);
-				text("Click to start", (float)width/2, (float)height/2);
+				textFont(JetBrainsMono, 50);
+				text("Select a Level", (float)width/2-10, (float)height/2-150);
+				if(mouseX>=200 && mouseX <= 520 && mouseY >= 400 && mouseY <= 580) {
+					rect(190, 390, 340, 200);
+				}
+				if(mouseX>=750 && mouseX<=1070 && mouseY >= 400 && mouseY <= 580){
+					rect(740, 390, 340, 200);
+				}
+				image(preview1, 200, 400);
+				image(preview2, 750, 400);
 				break;
 			case 1:
-				background(225,155,25);
-				background.draw(this);
-				tint(234, 190,144);
+				if(bg = false) {
+					background(10,13,17);
+					background.draw(this);
+				}else if(bg = true){
+					background(0,23,45);
+					background1.draw(this);
+				}
+				fill(0,150);
+				rect(0,0, 1280, 50);
 				image(turretImg, width / 2 - 50, height - 150);
-
 				//Randomly spawn ships
 				shipSpawnCounter += (int) (Math.random() * 10);
 				if (shipSpawnCounter > 50) {
@@ -70,7 +93,6 @@ public class Main extends PApplet {
 				score.draw(this);
 
 				if (bulletsLeft == 0 && bulletList.size() == 0) gameState = 2;
-
 				break;
 			case 2:
 				background(0);
@@ -80,6 +102,7 @@ public class Main extends PApplet {
 				text("Game Over", width / 2, height / 2);
 				textSize(30);
 				text("Click to restart", width / 2, height / 2 + 50);
+				text("High Score: " + Score.highScore, width/2,height/2+100);
 				break;
 		}
 	}
@@ -98,6 +121,19 @@ public class Main extends PApplet {
 		switch (gameState) {
 			case 0:
 				gameState = 1;
+				if(mouseX>=200 && mouseX <= 520 && mouseY >= 400 && mouseY <= 580){
+					fill(43,43,43);
+					rect(190, 390, 340, 200);
+					background = new BG(loadImage("../assets/BG/city.png"));
+					background.draw(this);
+					bg = false;
+				}
+				else if(mouseX>=750 && mouseX<=1070 && mouseY >= 400 && mouseY <= 580){
+					fill(43,43,43);
+					rect(740, 390, 340, 200);
+					background1.draw(this);
+					bg = true;
+				}
 				break;
 			case 1:
 				if (bulletsLeft > 0) {

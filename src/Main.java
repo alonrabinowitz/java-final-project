@@ -36,6 +36,7 @@ public class Main extends PApplet {
 	}
 
 	public void draw() {
+		frameRate(120);
 		switch (gameState) {
 			case 0:
 				background(0);

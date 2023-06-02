@@ -4,24 +4,15 @@
     <root id="archive" name="java-final-project.jar">
       <element id="module-output" name="java-final-project" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/core.jar" path-in-jar="/" />
-      <element id="file-copy" path="$PROJECT_DIR$/lib/jl1.0.1.jar" />
-      <element id="file-copy" path="$PROJECT_DIR$/lib/jsminim.jar" />
-      <element id="file-copy" path="$PROJECT_DIR$/lib/minim.jar" />
-      <element id="file-copy" path="$PROJECT_DIR$/lib/mp3spi1.9.5.jar" />
-      <element id="file-copy" path="$PROJECT_DIR$/lib/tritonus_aos.jar" />
-      <element id="file-copy" path="$PROJECT_DIR$/lib/tritonus_share.jar" />
       <element id="directory" name="assets">
         <element id="directory" name="BG">
-          <element id="file-copy" path="$PROJECT_DIR$/assets/BG/preview1.png" />
-          <element id="file-copy" path="$PROJECT_DIR$/assets/BG/preview2.png" />
           <element id="file-copy" path="$PROJECT_DIR$/assets/BG/city.png" />
           <element id="file-copy" path="$PROJECT_DIR$/assets/BG/farm.png" />
+          <element id="file-copy" path="$PROJECT_DIR$/assets/BG/preview1.png" />
+          <element id="file-copy" path="$PROJECT_DIR$/assets/BG/preview2.png" />
         </element>
         <element id="directory" name="fonts">
           <element id="file-copy" path="$PROJECT_DIR$/assets/fonts/JetBrainsMono-Regular.ttf" />
-        </element>
-        <element id="directory" name="Sound">
-          <element id="file-copy" path="$PROJECT_DIR$/assets/Sound/backgroundTrack.wav" />
         </element>
         <element id="directory" name="obj">
           <element id="file-copy" path="$PROJECT_DIR$/assets/obj/alien_cropped.png" />

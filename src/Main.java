@@ -1,5 +1,7 @@
 package src;
 
+import ddf.minim.AudioPlayer;
+import ddf.minim.Minim;
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
@@ -14,6 +16,8 @@ public class Main extends PApplet {
 	PImage shipImg, turretImg, bulletImg, preview1, preview2, background;
 	Score score;
 	PFont JetBrainsMono;
+	Minim loader;
+	AudioPlayer bgM;
 
 	public void settings() {
 		size(1280, 720);
@@ -32,6 +36,8 @@ public class Main extends PApplet {
 		preview1 = loadImage("assets/BG/preview1.png");
 		preview2 = loadImage("assets/BG/preview2.png");
 		JetBrainsMono = createFont("assets/fonts/JetBrainsMono-Regular.ttf", 32);
+		loader = new Minim(this);
+		bgM = loader.loadFile("assets/Sound/backgroundTrack.wav");
 	}
 
 	public void draw() {
@@ -57,6 +63,7 @@ public class Main extends PApplet {
 				fill(0,150);
 				rect(0,0, 1280, 50);
 				image(turretImg, width / 2 - 50, height - 150);
+				bgM.play();
 				//Randomly spawn ships
 				shipSpawnCounter += (int) (Math.random() * 10);
 				if (shipSpawnCounter > 50) {
@@ -83,6 +90,7 @@ public class Main extends PApplet {
 				score.draw(this);
 
 				if (bulletsLeft == 0 && bulletList.size() == 0) gameState = 2;
+
 				break;
 			case 2:
 				background(0);

@@ -5,6 +5,7 @@ import processing.core.PImage;
 public class Bullet {
     int x, y, width, height, bulletNum;
     float angle, xSpeed, ySpeed;
+
     PImage image;
     public Bullet(int x, int y, int bulletNum, float angle, PImage image) {
         this.width = 24;

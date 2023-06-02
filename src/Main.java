@@ -25,14 +25,14 @@ public class Main extends PApplet {
 		gameState = 0;
 		shipSpawnCounter = 0;
 		bulletsLeft = 10;
-		shipImg = loadImage("../assets/obj/alien_cropped.png");
-		turretImg = loadImage("../assets/obj/turret_complete.png");
+		shipImg = loadImage("assets/obj/alien_cropped.png");
+		turretImg = loadImage("assets/obj/turret_complete.png");
 		turretImg.resize(100, 100);
-		bulletImg = loadImage("../assets/obj/bullet.png");
+		bulletImg = loadImage("assets/obj/bullet.png");
 		score = new Score();
-		preview1 = loadImage("../assets/BG/preview1.png");
-		preview2 = loadImage("../assets/BG/preview2.png");
-		JetBrainsMono = createFont("../assets/fonts/JetBrainsMono-Regular.ttf", 32);
+		preview1 = loadImage("assets/BG/preview1.png");
+		preview2 = loadImage("assets/BG/preview2.png");
+		JetBrainsMono = createFont("assets/fonts/JetBrainsMono-Regular.ttf", 32);
 	}
 
 	public void draw() {
@@ -116,11 +116,11 @@ public class Main extends PApplet {
 				if (mouseX >= 200 && mouseX <= 520 && mouseY >= 400 && mouseY <= 580) {
 					fill(43,43,43);
 					rect(190, 390, 340, 200);
-					background = new BG(loadImage("../assets/BG/city.png"));
+					background = new BG(loadImage("assets/BG/city.png"));
 				} else if (mouseX >= 750 && mouseX <= 1070 && mouseY >= 400 && mouseY <= 580){
 					fill(43,43,43);
 					rect(740, 390, 340, 200);
-					background = new BG(loadImage("../assets/BG/farm.png"));
+					background = new BG(loadImage("assets/BG/farm.png"));
 				}
 				break;
 			case 1:

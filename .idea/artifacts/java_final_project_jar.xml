@@ -1,0 +1,29 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="java-final-project:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/java_final_project_jar</output-path>
+    <root id="archive" name="java-final-project.jar">
+      <element id="module-output" name="java-final-project" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/core.jar" path-in-jar="/" />
+      <element id="directory" name="assets">
+        <element id="directory" name="BG">
+          <element id="file-copy" path="$PROJECT_DIR$/assets/BG/city.png" />
+          <element id="file-copy" path="$PROJECT_DIR$/assets/BG/farm.png" />
+          <element id="file-copy" path="$PROJECT_DIR$/assets/BG/preview1.png" />
+          <element id="file-copy" path="$PROJECT_DIR$/assets/BG/preview2.png" />
+        </element>
+        <element id="directory" name="fonts">
+          <element id="file-copy" path="$PROJECT_DIR$/assets/fonts/JetBrainsMono-Regular.ttf" />
+        </element>
+        <element id="directory" name="obj">
+          <element id="file-copy" path="$PROJECT_DIR$/assets/obj/alien_cropped.png" />
+          <element id="file-copy" path="$PROJECT_DIR$/assets/obj/alien.png" />
+          <element id="file-copy" path="$PROJECT_DIR$/assets/obj/bullet_old.png" />
+          <element id="file-copy" path="$PROJECT_DIR$/assets/obj/bullet.png" />
+          <element id="file-copy" path="$PROJECT_DIR$/assets/obj/turret_base.png" />
+          <element id="file-copy" path="$PROJECT_DIR$/assets/obj/turret_cannon.png" />
+          <element id="file-copy" path="$PROJECT_DIR$/assets/obj/turret_complete.png" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -4,7 +4,6 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class Main extends PApplet {
@@ -12,16 +11,16 @@ public class Main extends PApplet {
 	ArrayList<Ship> shipList = new ArrayList<>();
 	int gameState;
 	int shipSpawnCounter, bulletsLeft;
-	PImage shipImg, turretImg, bulletImg, preview1, preview2;
+	PImage shipImg, turretImg, bulletImg, preview1, preview2, background;
 	Score score;
 	PFont JetBrainsMono;
-	BG background;
 
 	public void settings() {
 		size(1280, 720);
 	}
 
 	public void setup() {
+		//frameRate(120);
 		gameState = 0;
 		shipSpawnCounter = 0;
 		bulletsLeft = 10;
@@ -36,7 +35,6 @@ public class Main extends PApplet {
 	}
 
 	public void draw() {
-//		frameRate(120);
 		switch (gameState) {
 			case 0:
 				background(0);
@@ -44,18 +42,18 @@ public class Main extends PApplet {
 				textSize(50);
 				textAlign(CENTER);
 				textFont(JetBrainsMono, 50);
-				text("Select a Level", (float)width/2-10, (float)height/2-150);
-				if(mouseX>=200 && mouseX <= 520 && mouseY >= 400 && mouseY <= 580) {
+				text("Select a Level", (float)(width/2 - 10), (float)(height/2 - 150));
+				if (mouseX >= 200 && mouseX <= 520 && mouseY >= 400 && mouseY <= 580) {
 					rect(190, 390, 340, 200);
 				}
-				if(mouseX>=750 && mouseX<=1070 && mouseY >= 400 && mouseY <= 580){
+				if (mouseX >= 750 && mouseX <= 1070 && mouseY >= 400 && mouseY <= 580){
 					rect(740, 390, 340, 200);
 				}
 				image(preview1, 200, 400);
 				image(preview2, 750, 400);
 				break;
 			case 1:
-				background.draw(this);
+				background(background);
 				fill(0,150);
 				rect(0,0, 1280, 50);
 				image(turretImg, width / 2 - 50, height - 150);
@@ -116,11 +114,11 @@ public class Main extends PApplet {
 				if (mouseX >= 200 && mouseX <= 520 && mouseY >= 400 && mouseY <= 580) {
 					fill(43,43,43);
 					rect(190, 390, 340, 200);
-					background = new BG(loadImage("assets/BG/city.png"));
+					background = loadImage("assets/BG/city.png");
 				} else if (mouseX >= 750 && mouseX <= 1070 && mouseY >= 400 && mouseY <= 580){
 					fill(43,43,43);
 					rect(740, 390, 340, 200);
-					background = new BG(loadImage("assets/BG/farm.png"));
+					background = loadImage("assets/BG/farm.png");
 				}
 				break;
 			case 1:
